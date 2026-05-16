@@ -19,9 +19,7 @@ Ajoutez-y le contenu exact suivant :
         Require all granted
     </Directory>
 </VirtualHost>
-
-
+```
 ### Task 3 : Activer le site et recharger Apache2
 Activez le site grâce aux outils d'Apache (a2ensite) et rechargez le service :
-sudo a2ensite mon-site.conf{{execute}}
-sudo systemctl reload apache2{{execute}}
+`sudo a2ensite mon-site.conf && sudo systemctl reload apache2`{{execute}}
