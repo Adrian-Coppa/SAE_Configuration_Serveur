@@ -1,7 +1,11 @@
-Dans cette étape préliminaire, nous allons vérifier l'état des services web. [cite_start]Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80[cite: 28, 29].
+Dans cette étape préliminaire, nous allons vérifier l'état des services web.Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80.
+
+### Tâche 0 : installation de Nginx et d'Apache2 
+Il est nécessaire d'installer Nginx et Apache2 pour le déroulé de ce tutoriel
+`apt-get update && apt-get install -y apache2 nginx curl nano` {{execute}}
 
 ### Task 1 : Vérifier le statut de Nginx
-[cite_start]Exécutez la commande suivante pour constater que Nginx est actif[cite: 30]:
+Exécutez la commande suivante pour constater que Nginx est actif[cite: 30]:
 `sudo systemctl status nginx.service`{{execute}}
 
 ### Task 2 : Arrêter Nginx
