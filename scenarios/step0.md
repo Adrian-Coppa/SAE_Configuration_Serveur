@@ -34,20 +34,7 @@ Définissez les permissions correctes pour le répertoire Apache2 :
 
 Créez le fichier index.html pour Nginx :
 
-`cat << 'EOF' > /home/test/Desktop/Sites/index.html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Les différents types de café</title>
-</head>
-<body>
-    <h1>Les différents types de café</h1>
-    <h2>Accueil - Histoire du café</h2>
-    <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés...</p>
-</body>
-</html>
-EOF`{{execute}}
+
 
 ## Task 5 : Préparation de la configuration Nginx
 
