@@ -12,7 +12,7 @@ Créons le fichier de configuration pour notre site internet dans le répertoire
 Insérez la configuration correspondante pour Nginx :
 ```nginx
 server {
-    listen 81;
+    listen 8080;
     server_name mon-site.local;
     root /home/test/Desktop/Sites;
     index index.html;
@@ -26,5 +26,7 @@ server {
 ### Task 3 : Redémarrer Nginx et tester l'accès
 Appliquez la configuration en redémarrant le serveur Nginx :
 `sudo systemctl restart nginx`{{execute}}
-Vérifiez que Nginx répond correctement sur le port 81 :
-`curl http://mon-site.local:81`{{execute}}
+Vérifiez que Nginx répond correctement sur le port 8080 :
+`curl http://mon-site.local:8080`{{execute}}
+
+Cliquez sur **Verify** une fois Nginx configuré et fonctionnel sur le port 8080.

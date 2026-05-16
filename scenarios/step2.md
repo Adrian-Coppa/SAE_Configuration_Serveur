@@ -23,3 +23,5 @@ Ajoutez-y le contenu exact suivant :
 ### Task 3 : Activer le site et recharger Apache2
 Activez le site grâce aux outils d'Apache (a2ensite) et rechargez le service :
 `sudo a2ensite mon-site.conf && sudo systemctl reload apache2`{{execute}}
+
+Cliquez sur **Verify** une fois le VirtualHost configuré et activé.

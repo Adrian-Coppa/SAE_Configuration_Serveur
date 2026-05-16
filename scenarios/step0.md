@@ -18,23 +18,53 @@ Créez le dossier de destination pour les sites web :
 
 ## Task 3 : Création du site web Apache2
 
-Créez le dossier et le fichier index.html pour Apache2 :
+Créez le dossier pour Apache2 :
 
 `mkdir -p /var/www/mon-site.local`{{execute}}
 
+Créez le fichier index.html pour Apache2 :
 
+`sudo bash -c 'cat > /var/www/mon-site.local/index.html << "EOF"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Les différents types de café</title>
+</head>
+<body>
+    <h1>Les différents types de café</h1>
+    <h2>Accueil - Histoire du café</h2>
+    <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
+</body>
+</html>
+EOF
+'`{{execute}}
 
 Définissez les permissions correctes pour le répertoire Apache2 :
 
-`chown -R www-data:www-data /var/www/mon-site.local`{{execute}}
+`sudo chown -R www-data:www-data /var/www/mon-site.local`{{execute}}
 
-`chmod -R 755 /var/www/mon-site.local`{{execute}}
+`sudo chmod -R 755 /var/www/mon-site.local`{{execute}}
 
 ## Task 4 : Création du site web Nginx
 
 Créez le fichier index.html pour Nginx :
 
-
+`sudo bash -c 'cat > /home/test/Desktop/Sites/index.html << "EOF"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Les différents types de café</title>
+</head>
+<body>
+    <h1>Les différents types de café</h1>
+    <h2>Accueil - Histoire du café</h2>
+    <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
+</body>
+</html>
+EOF
+'`{{execute}}
 
 ## Task 5 : Préparation de la configuration Nginx
 
@@ -48,9 +78,9 @@ Préparez l'arborescence Nginx :
 
 Arrêtez Apache2 et démarrez Nginx :
 
-`systemctl stop apache2 || true`{{execute}}
+`sudo systemctl stop apache2 || true`{{execute}}
 
-`systemctl start nginx`{{execute}}
+`sudo systemctl start nginx`{{execute}}
 
 Vérifiez l'état de Nginx :
 
