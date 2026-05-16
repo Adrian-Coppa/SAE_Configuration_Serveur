@@ -1,4 +1,4 @@
-# STEP 0 : Configuration initiale du serveur
+## STEP 0 : Configuration initiale du serveur
 
 Dans cette étape préliminaire, nous allons exécuter toutes les configurations initiales nécessaires pour préparer votre serveur avant de commencer les étapes suivantes.
 
