@@ -1,15 +1,15 @@
-[cite_start]Pour clore cette étude technique, nous allons reproduire la bascule vers l'environnement **Nginx** mentionnée en seconde partie du document[cite: 280].
+Pour clore cette étude technique, nous allons reproduire la bascule vers l'environnement **Nginx** mentionnée dans la notice technique.
 
 ### Task 1 : Arrêter Apache2 et démarrer Nginx
-[cite_start]Libérons les ports en coupant Apache2, puis démarrons Nginx[cite: 282, 283, 284]:
+Libérons les ports en coupant Apache2, puis démarrons Nginx :
 `sudo systemctl stop apache2`{{execute}}
 `sudo systemctl start nginx`{{execute}}
 
 ### Task 2 : Configuration du site sous Nginx
-[cite_start]Créons un fichier de bloc serveur propre à Nginx pour pointer vers notre site[cite: 289, 290]:
+Créons le fichier de configuration pour notre site internet dans le répertoire de Nginx :
 `sudo nano /etc/nginx/sites-enabled/mon-site`{{execute}}
 
-[cite_start]Insérez la configuration équivalente pour Nginx[cite: 291]:
+Insérez la configuration correspondante pour Nginx :
 ```nginx
 server {
     listen 81;
@@ -21,3 +21,10 @@ server {
         try_files $uri $uri/ =404;
     }
 }
+```
+
+### Task 3 : Redémarrer Nginx et tester l'accès
+Appliquez la configuration en redémarrant le serveur Nginx :
+`sudo systemctl restart nginx`{{execute}}
+Vérifiez que Nginx répond correctement sur le port 81 :
+`curl http://mon-site.local:81`{{execute}}
