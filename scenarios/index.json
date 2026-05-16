@@ -7,7 +7,7 @@
     "steps": [
       {"title" : "initialisation de la machine",
         "text" :"step0.md"
-      }
+      },
       {
         "title": "Gestion des services initiaux",
         "text": "step1.md",
