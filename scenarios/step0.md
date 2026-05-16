@@ -22,22 +22,7 @@ Créez le dossier et le fichier index.html pour Apache2 :
 
 `mkdir -p /var/www/mon-site.local`{{execute}}
 
-Créez le fichier index.html pour Apache2 :
 
-`cat << 'EOF' > /var/www/mon-site.local/index.html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Les différents types de café</title>
-</head>
-<body>
-    <h1>Les différents types de café</h1>
-    <h2>Accueil - Histoire du café</h2>
-    <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
-</body>
-</html>
-EOF`{{execute}}
 
 Définissez les permissions correctes pour le répertoire Apache2 :
 
