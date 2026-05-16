@@ -1,12 +1,12 @@
 #!/bin/bash
-# Mise à jour et installation des serveurs web
+# 1. Forcer la mise à jour et installer immédiatement tous les outils requis
 apt-get update -y
 apt-get install -y apache2 nginx curl nano
 
-# Simulation de l'environnement utilisateur du document
+# 2. Créer l'arborescence complète pour le site web (Éviter le dossier manquant)
 mkdir -p /home/test/Desktop/Sites
 
-# Création du site de démonstration sur le café (Page 7 du document)
+# 3. Créer le site web de démonstration (Page 7 du document)
 cat << 'EOF' > /home/test/Desktop/Sites/index.html
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,10 @@ cat << 'EOF' > /home/test/Desktop/Sites/index.html
 </html>
 EOF
 
-# S'assurer que Nginx est démarré par défaut comme stipulé dans le document (Page 2)
+# 4. Préparer proprement l'arborescence Nginx pour éviter le bug de l'étape 5
+mkdir -p /etc/nginx/sites-available
+mkdir -p /etc/nginx/sites-enabled
+
+# 5. Configurer l'état initial des services conformes au début du TP (Nginx actif, Apache2 coupé)
 systemctl stop apache2
 systemctl start nginx
