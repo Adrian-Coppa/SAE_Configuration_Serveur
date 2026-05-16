@@ -24,7 +24,7 @@ Créez le dossier pour Apache2 :
 
 Créez le fichier index.html pour Apache2 :
 
-`sudo bash -c 'cat > /var/www/mon-site.local/index.html << "EOF"
+`sudo tee /var/www/mon-site.local/index.html > /dev/null << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +37,7 @@ Créez le fichier index.html pour Apache2 :
     <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
 </body>
 </html>
-EOF
-'`{{execute}}
+EOF`{{execute}}
 
 Définissez les permissions correctes pour le répertoire Apache2 :
 
@@ -50,7 +49,7 @@ Définissez les permissions correctes pour le répertoire Apache2 :
 
 Créez le fichier index.html pour Nginx :
 
-`sudo bash -c 'cat > /home/test/Desktop/Sites/index.html << "EOF"
+`sudo tee /home/test/Desktop/Sites/index.html > /dev/null << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +62,7 @@ Créez le fichier index.html pour Nginx :
     <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
 </body>
 </html>
-EOF
-'`{{execute}}
+EOF`{{execute}}
 
 ## Task 5 : Préparation de la configuration Nginx
 
