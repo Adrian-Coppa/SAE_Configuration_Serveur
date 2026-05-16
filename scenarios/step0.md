@@ -24,7 +24,11 @@ Créez le dossier pour Apache2 :
 
 Créez le fichier index.html pour Apache2 :
 
-`sudo tee /var/www/mon-site.local/index.html > /dev/null << 'EOF'
+`nano /var/www/mon-site.local/index.html`{{execute}}
+
+Tapez le contenu suivant dans l'éditeur nano (vous pouvez copier-coller) :
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +41,9 @@ Créez le fichier index.html pour Apache2 :
     <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
 </body>
 </html>
-EOF`{{execute}}
+```
+
+Appuyez sur **Ctrl+O** pour enregistrer, puis **Ctrl+X** pour quitter nano.
 
 Définissez les permissions correctes pour le répertoire Apache2 :
 
@@ -49,7 +55,11 @@ Définissez les permissions correctes pour le répertoire Apache2 :
 
 Créez le fichier index.html pour Nginx :
 
-`sudo tee /home/test/Desktop/Sites/index.html > /dev/null << 'EOF'
+`nano /home/test/Desktop/Sites/index.html`{{execute}}
+
+Tapez le contenu suivant dans l'éditeur nano (vous pouvez copier-coller) :
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +72,9 @@ Créez le fichier index.html pour Nginx :
     <p>Le café est une boisson chaude obtenue par l'infusion de grains de café torréfiés et moulus, puis versée dans l'eau bouillante. Son histoire remonte au 15ème siècle en Éthiopie.</p>
 </body>
 </html>
-EOF`{{execute}}
+```
+
+Appuyez sur **Ctrl+O** pour enregistrer, puis **Ctrl+X** pour quitter nano.
 
 ## Task 5 : Préparation de la configuration Nginx
 
