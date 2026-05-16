@@ -1,0 +1,24 @@
+{
+  "title": "Configuration Serveur Apache - Tutoriel Complet",
+  "description": "Suivez le manuel pas à pas dans une VM live",
+  "backend": {
+    "imageid": "ubuntu:2204",
+    "lifetime": 45
+  },
+  "details": {
+    "steps": [
+      {
+        "title": "Étape 1 : Installation",
+        "text": "sudo apt update && sudo apt install apache2 -y"
+      },
+      {
+        "title": "Étape 2 : Configuration des ports",
+        "text": "Modifiez /etc/apache2/ports.conf"
+      },
+      {
+        "title": "Étape 3 : Vérification",
+        "text": "curl localhost"
+      }
+    ]
+  }
+}
