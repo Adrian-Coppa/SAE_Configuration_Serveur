@@ -1,17 +1,54 @@
 {
-  "title": "Linux Basics",
-  "description": "Découverte simple d'une VM Linux",
-  "difficulty": "beginner",
-  "time": "5 minutes",
+  "title": "Création et configuration d'un serveur Web local (Apache2 & Nginx)",
+  "description": "Apprenez à basculer entre Nginx et Apache2, configurer un VirtualHost, gérer les permissions et modifier le DNS local.",
+  "difficulty": "Intermediate",
+  "time": "20-30 minutes",
   "details": {
+    "steps": [
+      {
+        "title": "Gestion des services initiaux",
+        "text": "step1.md",
+        "verify": "step1-verify.sh"
+      },
+      {
+        "title": "Configuration du VirtualHost Apache2",
+        "text": "step2.md",
+        "verify": "step2-verify.sh"
+      },
+      {
+        "title": "Changement de port et gestion des droits",
+        "text": "step3.md",
+        "verify": "step3-verify.sh"
+      },
+      {
+        "title": "Configuration du DNS local et Déploiement",
+        "text": "step4.md",
+        "verify": "step4-verify.sh"
+      },
+      {
+        "title": "Bascule vers le serveur Nginx",
+        "text": "step5.md",
+        "verify": "step5-verify.sh"
+      }
+    ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "credits": "Inspiré de la notice technique de Bouabidi Sofiane & Coppa Adrian"
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "setup.sh",
+          "target": "/root/setup.sh",
+          "chmod": "+x"
+        }
+      ]
     }
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "ubuntu:2204"
   }
 }
