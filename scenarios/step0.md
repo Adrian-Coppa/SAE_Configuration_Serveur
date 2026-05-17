@@ -1,6 +1,6 @@
 ## Etape 0 : Configuration initiale du serveur
 
-Dans cette étape préliminaire, nous allons exécuter toutes les configurations initiales nécessaires pour préparer votre serveur avant de commencer les étapes suivantes.
+Dans cette étape préliminaire, nous allons exécuter toutes les configurations initiales nécessaires pour préparer le serveur avant de commencer les étapes suivantes.
 
 ## Tâche 1 : Mise à jour du système et installation des outils requis
 
@@ -26,7 +26,7 @@ Créez le fichier index.html pour Apache2 :
 
 `nano /var/www/mon-site.local/index.html`{{execute}}
 
-Tapez le contenu suivant dans l'éditeur nano (vous pouvez copier-coller) :
+Tapez le contenu suivant dans l'éditeur nano (ou vous pouvez proposer votre contenu html):
 
 ```html
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ Créez le fichier index.html pour Nginx :
 
 `nano /home/test/Desktop/Sites/index.html`{{execute}}
 
-Tapez le contenu suivant dans l'éditeur nano (vous pouvez copier-coller) :
+Tapez le contenu suivant dans l'éditeur nano :
 
 ```html
 <!DOCTYPE html>
