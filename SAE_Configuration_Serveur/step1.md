@@ -1,20 +1,35 @@
-Dans cette étape préliminaire, nous allons vérifier l'état des services web.Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80.
+Pour commencer, nous allons vérifier l'état des services web. Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80.
 
-### Tâche 0 : installation de Nginx et d'Apache2 
-Il est nécessaire d'installer Nginx et Apache2 pour le déroulé de ce tutoriel
-`apt-get update && apt-get install -y apache2 nginx curl nano`{{execute}}
+### Tâche 1 : Vérifier l'état de Nginx
 
-### Task 1 : Vérifier le statut de Nginx
-Exécutez la commande suivante pour constater que Nginx est actif:
+Exécutez la commande suivante pour constater si Nginx est actif :
+
 `sudo systemctl status nginx.service`{{execute}}
 
-### Task 2 : Arrêter Nginx
-[cite_start]Afin de pouvoir lancer Apache2 librement, arrêtez le service Nginx:
+### Tâche 2 : Arrêter Nginx
+
+Afin de pouvoir lancer Apache2 librement, arrêtez le service Nginx et désactivez-le au démarrage :
+
 `sudo systemctl stop nginx.service`{{execute}}
 
-### Task 3 : Démarrer Apache2
-[cite_start]Maintenant, démarrez le service Apache2 et assurez-vous qu'il tourne correctement:
+`sudo systemctl disable nginx.service`{{execute}}
+
+### Tâche 3 : Activer et démarrer Apache2
+
+Activez Apache2 au démarrage et démarrez-le :
+
+`sudo systemctl enable apache2`{{execute}}
+
 `sudo systemctl start apache2`{{execute}}
+
+### Tâche 4 : Vérifier les services
+
+Vérifiez que Apache2 est en cours d'exécution :
+
 `sudo systemctl status apache2`{{execute}}
+
+Vérifiez qu'Apache2 écoute bien sur le port 80 :
+
+`sudo ss -tuln | grep LISTEN | grep -E ':80'`{{execute}}
 
 Cliquez sur **Verify** une fois Apache2 démarré et Nginx arrêté.

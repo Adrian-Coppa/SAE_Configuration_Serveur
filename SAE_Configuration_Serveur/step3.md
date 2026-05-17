@@ -1,19 +1,43 @@
-### Task 1 : Option de changement de port (Port 8080)
-[cite_start]Parfois, on souhaite écouter sur un autre port que le port 80[cite: 122, 126]. [cite_start]Modifions le fichier de configuration des ports d'Apache2[cite: 127]:
+### Tâche 1 : Configurer Apache2 pour le port 8080
+
+Modifions le fichier de configuration des ports d'Apache2 :
+
 `sudo nano /etc/apache2/ports.conf`{{execute}}
 
-[cite_start]Ajoutez la ligne `Listen 8080` juste en dessous de `Listen 80`[cite: 127, 129, 130].
+Ajoutez la ligne `Listen 8080` juste en dessous de `Listen 80`.
 
-[cite_start]Mettez également à jour votre fichier `mon-site.conf` pour écouter sur ce nouveau port[cite: 122]:
+Mettez également à jour votre fichier `mon-site.conf` pour écouter sur ce nouveau port :
+
 `sudo nano /etc/apache2/sites-available/mon-site.conf`{{execute}}
+
 Modifiez la première ligne : `<VirtualHost *:80>` devient `<VirtualHost *:8080>`.
 
-[cite_start]Rechargez Apache2 pour appliquer les changements:
-`sudo systemctl reload apache2`{{execute}}
+Appuyez sur **Ctrl+O** pour enregistrer, puis **Ctrl+X** pour quitter nano.
 
-### Task 2 : Alignement des permissions (Droits d'accès)
-[cite_start]Pour éviter les erreurs de type *Permission Denied* (403 Forbidden), attribuez la propriété du dossier à l'utilisateur web `www-data` et configurez les droits d'accès requis[cite: 22, 137, 138]:
+### Tâche 2 : Vérifier la configuration et redémarrer Apache2
+
+Vérifiez la syntaxe de configuration :
+
+`sudo apache2ctl configtest`{{execute}}
+
+Redémarrez Apache2 pour appliquer les changements :
+
+`sudo systemctl restart apache2`{{execute}}
+
+Vérifiez l'état d'Apache2 et qu'il écoute bien sur le port 8080 :
+
+`sudo systemctl status apache2`{{execute}}
+
+`sudo ss -tuln | grep LISTEN | grep -E ':8080'`{{execute}}
+
+### Tâche 3 : Configurer les permissions
+
+Pour éviter les erreurs de type *Permission Denied* (403 Forbidden), attribuez la propriété du dossier à l'utilisateur web `www-data` :
 
 `sudo chmod -R 755 /home/test/Desktop/Sites`{{execute}}
+
 `sudo chown -R www-data:www-data /home/test/Desktop/Sites`{{execute}}
+
 `sudo chmod +x /home/test`{{execute}}
+
+Cliquez sur **Verify** une fois le port 8080 configuré et les permissions définies.

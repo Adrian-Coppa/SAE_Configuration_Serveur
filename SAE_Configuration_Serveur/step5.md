@@ -1,18 +1,32 @@
 Pour clore cette étude technique, nous allons reproduire la bascule vers l'environnement **Nginx** mentionnée dans la notice technique.
 
-### Task 1 : Arrêter Apache2 et démarrer Nginx
-Libérons les ports en coupant Apache2, puis démarrons Nginx :
+### Tâche 1 : Arrêter Apache2 et démarrer Nginx
+
+Vérifiez qu'Apache2 est bien en cours d'exécution sur le port 8080 :
+
+`sudo ss -tuln | grep 8080`{{execute}}
+
+Arrêtez Apache2 et démarrez Nginx :
+
 `sudo systemctl stop apache2`{{execute}}
+
 `sudo systemctl start nginx`{{execute}}
 
-### Task 2 : Configuration du site sous Nginx
-Créons le fichier de configuration pour notre site internet dans le répertoire de Nginx :
+Vérifiez l'état des services :
+
+`sudo systemctl status nginx`{{execute}}
+
+### Tâche 2 : Configurer Nginx
+
+Créez le fichier de configuration pour notre site :
+
 `sudo nano /etc/nginx/sites-enabled/mon-site`{{execute}}
 
-Insérez la configuration correspondante pour Nginx :
+Insérez la configuration correspondante :
+
 ```nginx
 server {
-    listen 81;
+    listen 8080;
     server_name mon-site.local;
     root /home/test/Desktop/Sites;
     index index.html;
@@ -23,8 +37,28 @@ server {
 }
 ```
 
-### Task 3 : Redémarrer Nginx et tester l'accès
-Appliquez la configuration en redémarrant le serveur Nginx :
+Appuyez sur **Ctrl+O** pour enregistrer, puis **Ctrl+X** pour quitter nano.
+
+### Tâche 3 : Vérifier la configuration et redémarrer Nginx
+
+Vérifiez la syntaxe de configuration Nginx :
+
+`sudo nginx -t`{{execute}}
+
+Redémarrez Nginx :
+
 `sudo systemctl restart nginx`{{execute}}
-Vérifiez que Nginx répond correctement sur le port 81 :
-`curl http://mon-site.local:81`{{execute}}
+
+Vérifiez que Nginx écoute bien sur le port 8080 :
+
+`sudo ss -tuln | grep 8080`{{execute}}
+
+### Tâche 4 : Tester l'accès à Nginx
+
+Testez l'accès à votre site via Nginx :
+
+`curl http://mon-site.local:8080`{{execute}}
+
+Si le code HTML de votre page que vous avez écrit à l'étape 0 s'affiche, votre bascule vers Nginx est réussie !
+
+Cliquez sur **Verify** une fois Nginx configuré et fonctionnel.
