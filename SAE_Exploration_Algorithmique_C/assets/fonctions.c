@@ -222,10 +222,10 @@ void rechercher_client(CLIENT clients[], int nombre_clients, const char *date_re
     int trouve = 0; // Pour suivre si un client a �t� trouv�
 
     for (int i = 0; i < nombre_clients; i++) {
-        if (stricmp(clients[i].nom, recherche) == 0 ||
-            stricmp(clients[i].prenom, recherche) == 0 ||
-            stricmp(clients[i].telephone, recherche) == 0 ||
-            stricmp(clients[i].adresse_mel, recherche) == 0) {
+        if (strcasecmp(clients[i].nom, recherche) == 0 ||
+            strcasecmp(clients[i].prenom, recherche) == 0 ||
+            strcasecmp(clients[i].telephone, recherche) == 0 ||
+            strcasecmp(clients[i].adresse_mel, recherche) == 0) {
 
             int age = calculer_age(clients[i].date_naissance, date_referente);
             printf("%s, %s, %s, %s, %s, %s",
