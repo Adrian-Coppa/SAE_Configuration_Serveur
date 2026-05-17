@@ -2,7 +2,7 @@
 
 Dans cette étape préliminaire, nous allons exécuter toutes les configurations initiales nécessaires pour préparer votre serveur avant de commencer les étapes suivantes.
 
-## Task 1 : Mise à jour du système et installation des outils requis
+## Tâche 1 : Mise à jour du système et installation des outils requis
 
 Mettez à jour le système et installez Apache2, Nginx et les outils essentiels :
 
@@ -10,13 +10,13 @@ Mettez à jour le système et installez Apache2, Nginx et les outils essentiels 
 
 `apt-get install -y apache2 nginx curl nano`{{execute}}
 
-## Task 2 : Création de l'arborescence des sites
+## Tâche 2 : Création de l'arborescence des sites
 
 Créez le dossier de destination pour les sites web :
 
 `mkdir -p /home/test/Desktop/Sites`{{execute}}
 
-## Task 3 : Création du site web Apache2
+## Tâche 3 : Création du site web Apache2
 
 Créez le dossier pour Apache2 :
 
@@ -51,7 +51,7 @@ Définissez les permissions correctes pour le répertoire Apache2 :
 
 `sudo chmod -R 755 /var/www/mon-site.local`{{execute}}
 
-## Task 4 : Création du site web Nginx
+## Tâche 4 : Création du site web Nginx
 
 Créez le fichier index.html pour Nginx :
 
@@ -76,7 +76,7 @@ Tapez le contenu suivant dans l'éditeur nano (vous pouvez copier-coller) :
 
 Appuyez sur **Ctrl+O** pour enregistrer, puis **Ctrl+X** pour quitter nano.
 
-## Task 5 : Préparation de la configuration Nginx
+## Tâche 5 : Préparation de la configuration Nginx
 
 Préparez l'arborescence Nginx :
 
@@ -84,7 +84,7 @@ Préparez l'arborescence Nginx :
 
 `mkdir -p /etc/nginx/sites-enabled`{{execute}}
 
-## Task 6 : Configuration des services
+## Tâche 6 : Configuration des services
 
 Arrêtez Apache2 et démarrez Nginx :
 
