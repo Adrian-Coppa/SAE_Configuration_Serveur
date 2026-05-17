@@ -30,6 +30,6 @@ Testez l'accès à votre site via le nom de domaine :
 
 `curl http://mon-site.local:8080`{{execute}}
 
-Si le code HTML de votre page sur les "cafés" s'affiche, votre déploiement Apache2 est réussi !
+Si le code HTML de votre page que vous avez écrit à l'étape 0 s'affiche, votre déploiement Apache2 est réussi !
 
 Cliquez sur **Verify** une fois le DNS configuré et le test réussi.
