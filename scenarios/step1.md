@@ -1,4 +1,4 @@
-Dans cette étape préliminaire, nous allons vérifier l'état des services web. Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80.
+Pour commencer, nous allons vérifier l'état des services web. Il est fréquent qu'un autre service (comme Nginx) soit actif par défaut et bloque le port 80.
 
 ### Tâche 1 : Vérifier l'état de Nginx
 
