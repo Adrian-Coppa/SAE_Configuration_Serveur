@@ -6,7 +6,7 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "courseData": "scripts/setup.sh",
+      "courseData": "vm/setup.sh",
       "credits": ""
     },
     "steps": [
@@ -17,22 +17,22 @@
       {
         "title": "Étape 2 — Compilation du programme",
         "text": "step2.md",
-        "verify": "scripts/verify_step2.sh"
+        "verify": "vm/verify_step2.sh"
       },
       {
         "title": "Étape 3 — Afficher et trier les clients",
         "text": "step3.md",
-        "verify": "scripts/verify_step3.sh"
+        "verify": "vm/verify_step3.sh"
       },
       {
         "title": "Étape 4 — Rechercher et filtrer",
         "text": "step4.md",
-        "verify": "scripts/verify_step4.sh"
+        "verify": "vm/verify_step4.sh"
       },
       {
         "title": "Étape 5 — Ajouter, modifier, supprimer et sauvegarder",
         "text": "step5.md",
-        "verify": "scripts/verify_step5.sh"
+        "verify": "vm/verify_step5.sh"
       }
     ],
     "finish": {
